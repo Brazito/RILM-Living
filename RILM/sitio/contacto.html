@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | RILM Living</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+
+:root{
+--azul:#0A3D62;
+--verde:#2ECC71;
+--gris:#f4f7fa;
+}
+
+body{background:var(--gris);}
+
+/* HEADER */
+.header{
+position:fixed;
+top:0;
+width:100%;
+height:90px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 60px;
+background:rgba(10,61,98,0.95);
+z-index:1000;
+}
+
+.nav{display:flex;gap:30px;}
+.nav a{color:white;text-decoration:none;}
+
+/* LOGO PROFESIONAL */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* AUMENTAMOS TAMAÑO SIN ROMPER */
+.logo img{
+  height:65px; /* antes 55 */
+  max-height:70px; /* evita que se salga */
+  object-fit:contain;
+}
+
+/* TEXTO LOGO */
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-text .main{
+  color:white;
+  font-weight:800;
+  letter-spacing:3px;
+  font-size:20px;
+}
+
+.logo-text .sub{
+  color:white;
+  font-size:12px;
+  letter-spacing:4px;
+}
+
+/* LÍNEA PREMIUM */
+.logo::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:2px;
+  background:white;
+  margin-top:4px;
+}
+
+/* HERO */
+.hero{
+height:40vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{font-size:40px;}
+
+/* CONTENEDOR */
+.section{padding:100px 60px;}
+.container{max-width:1100px;margin:auto;}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+/* FORMULARIO */
+form{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:8px;
+outline:none;
+}
+
+textarea{
+height:150px;
+resize:none;
+}
+
+button{
+  background:#0A3D62;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:600;
+}
+
+button:hover{
+  background:#072a44;
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(10,61,98,0.3);
+}
+
+/* INFO */
+.info-box{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.info-box h3{
+margin-bottom:20px;
+color:var(--azul);
+}
+
+.info-box p{
+margin:10px 0;
+}
+
+/* REDES */
+.social{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.social a{
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:var(--azul);
+color:white;
+transition:0.3s;
+}
+
+.social a:hover{
+background:var(--verde);
+transform:translateY(-3px);
+}
+
+/* FOOTER PRO */
+footer{
+  background:#082b47;
+  color:white;
+  padding:80px 60px 40px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  margin-bottom:40px;
+}
+
+.frase{
+  font-style:italic;
+  color:#2ECC71;
+  margin:15px 0;
+  font-size:15px;
+}
+
+footer i{
+  margin-right:8px;
+  color:#2ECC71;
+}
+
+.social{
+  display:flex;
+  gap:15px;
+  margin:15px 0;
+}
+
+.social a{
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:white;
+  transition:0.3s;
+}
+
+.social a:hover{
+  background:#2ECC71;
+  transform:translateY(-3px);
+}
+
+.social-text{
+  font-size:14px;
+  opacity:0.8;
+}
+
+.footer-bottom{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:20px;
+  font-size:14px;
+  opacity:0.7;
+}
+
+.map-section{
+  padding:100px 0;
+  background:#eef4f8;
+  text-align:center;
+}
+
+.map-title{
+  font-size:32px;
+  margin-bottom:30px;
+  color:#0A3D62;
+}
+
+/* MAPA FULL WIDTH */
+.map-container{
+  width:100%;
+  height:600px;
+  overflow:hidden;
+}
+
+.map-container iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.info-box{
+  background:white;
+  padding:40px;
+  border-radius:12px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* TÍTULOS EN AZUL */
+.info-box h3{
+  color:#0A3D62;
+  margin-bottom:20px;
+}
+
+/* TEXTO MÁS PROFESIONAL */
+.info-box p{
+  margin:12px 0;
+  color:#000000;
+  font-weight:500;
+}
+
+/* ICONOS EN VERDE/ACENTO */
+.info-box i{
+  color:#0A3D62;
+  margin-right:8px;
+}
+
+.info-box:hover{
+  transform:translateY(-5px);
+  transition:0.3s;
+  box-shadow:0 25px 50px rgba(0,0,0,0.12);
+}
+
+.social-title{
+  color:#0A3D62;
+  margin-top:30px;
+  font-size:18px;
+}
+
+/* CONTENEDOR */
+.social-cards{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:15px;
+}
+
+/* TARJETA */
+.social-card{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:14px 18px;
+  background:#ffffff;
+  border-radius:12px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  transition:0.3s;
+  border-left:4px solid #0A3D62;
+}
+
+/* ICONO */
+.social-card i{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0A3D62;
+  color:white;
+  border-radius:10px;
+  font-size:16px;
+}
+
+/* TEXTO */
+.social-card .name{
+  display:block;
+  font-weight:600;
+  color:#0A3D62;
+}
+
+.social-card .desc{
+  display:block;
+  font-size:12px;
+  color:#666;
+}
+
+/* HOVER PREMIUM */
+.social-card:hover{
+  transform:translateX(6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+  border-left:4px solid #0A3D62;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+  <img src="img/logo.png">
+  <div class="logo-text">
+    <span class="main">RILM</span>
+    <span class="sub">LIVING</span>
+  </div>
+</div>
+
+<nav class="nav">
+<a href="index.html">Inicio</a>
+<a href="servicios.html">Servicios</a>
+<a href="nosotros.html">Nosotros</a>
+<a href="contacto.html">Contacto</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Contacto</h1>
+</section>
+
+<!-- FORM + INFO -->
+<section class="section">
+  <div class="container grid">
+
+    <!-- FORMULARIO -->
+    <form class="reveal">
+      <h2>Envíanos un mensaje</h2> 
+
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="text" placeholder="Teléfono (opcional)">
+      <textarea placeholder="Escribe tu mensaje..."></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <!-- INFO -->
+<div class="info-box">
+
+<h3>Información de contacto</h3>
+
+<p><i class="fas fa-phone"></i> +52 56 1187 5196</p>
+<p><i class="fas fa-envelope"></i> info@rilm.com.mx</p>
+<p><i class="fas fa-map-marker-alt"></i> Gutenberg #39 Piso 5 Col. Verónica Anzures; Alcaldía Miguel Hidalgo CDMX.</p>
+
+<h3 class="social-title">Redes sociales</h3>
+
+<div class="social-cards">
+
+<a href="https://www.facebook.com/rilmliving" target="_blank" class="social-card">
+<i class="fab fa-facebook-f"></i>
+<div>
+  <span class="name">Facebook</span>
+  <span class="desc">Noticias y propiedades</span>
+</div>
+</a>
+
+<a href="https://www.instagram.com/rilmliving" target="_blank" class="social-card">
+<i class="fab fa-instagram"></i>
+<div>
+  <span class="name">Instagram</span>
+  <span class="desc">Proyectos y estilo de vida</span>
+</div>
+</a>
+
+<a href="https://www.linkedin.com/company/rilm-living" target="_blank" class="social-card">
+<i class="fab fa-linkedin-in"></i>
+<div>
+  <span class="name">LinkedIn</span>
+  <span class="desc">Red profesional</span>
+</div>
+</a>
+
+<a href="https://wa.me/525611875196" target="_blank" class="social-card">
+<i class="fab fa-whatsapp"></i>
+<div>
+  <span class="name">WhatsApp</span>
+  <span class="desc">Contacto directo</span>
+</div>
+</a>
+
+</div>
+
+</section>
+
+<!-- MAPA GRANDE (ABAJO) -->
+<section class="map-section reveal">
+
+  <h2 class="map-title">Nuestra ubicación</h2>
+
+  <div class="map-container">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.506594624643!2d-99.17531702501309!3d19.433713281845854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9afc8738729%3A0x8b90951632f769e7!2sRILM%20LIVING%20SA%20DE%20CV!5e0!3m2!1ses-419!2smx!4v1776920161169!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>RILM Living</h4>
+
+<p class="frase">
+"Transformamos decisiones inmobiliarias en crecimiento patrimonial sostenible."
+</p>
+
+<p>
+Firma especializada en consultoría inmobiliaria en la Ciudad de México, enfocada en análisis estratégico, inversión y desarrollo patrimonial.
+</p>
+
+</div>
+
+<div>
+<h4>Contacto</h4>
+<p><i class="fas fa-phone"></i> +52 56 1187 5196</p>
+<p><i class="fas fa-envelope"></i> info@rilm.com.mx</p>
+<p><i class="fas fa-map-marker-alt"></i> Ciudad de México</p>
+</div>
+
+<div>
+<h4>Redes sociales</h4>
+
+<div class="social">
+
+<a href="https://www.facebook.com/rilmliving" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/rilmliving" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/rilm-living" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="https://wa.me/525611875196?text=Hola,%20quiero%20información" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+<p class="social-text">
+Síguenos para conocer oportunidades, tendencias del mercado y contenido inmobiliario relevante.
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 RILM Living. Todos los derechos reservados.</p>
+</div>
+
+</footer>
+
+</body>
+</html>

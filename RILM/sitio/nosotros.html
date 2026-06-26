@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros | RILM Living</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+
+:root{
+--azul:#0A3D62;
+--verde:#2ECC71;
+--gris:#f4f7fa;
+}
+
+body{background:var(--gris);}
+
+/* HEADER */
+.header{
+position:fixed;
+top:0;
+width:100%;
+height:90px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 60px;
+background:rgba(10,61,98,0.95);
+z-index:1000;
+}
+
+.nav{display:flex;gap:30px;}
+.nav a{color:white;text-decoration:none;}
+
+/* LOGO PROFESIONAL */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* AUMENTAMOS TAMAÑO SIN ROMPER */
+.logo img{
+  height:65px; /* antes 55 */
+  max-height:70px; /* evita que se salga */
+  object-fit:contain;
+}
+
+/* TEXTO LOGO */
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-text .main{
+  color:white;
+  font-weight:800;
+  letter-spacing:3px;
+  font-size:20px;
+}
+
+.logo-text .sub{
+  color:white;
+  font-size:12px;
+  letter-spacing:4px;
+}
+
+/* LÍNEA PREMIUM */
+.logo::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:2px;
+  background:#2ECC71;
+  margin-top:4px;
+}
+
+/* HERO */
+.hero{
+height:70vh;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1502005097973-6a7082348e28') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{font-size:45px;}
+
+/* SECCIONES */
+.section{padding:100px 60px;}
+.container{max-width:1200px;margin:auto;}
+
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.img-box{
+height:320px;
+border-radius:12px;
+overflow:hidden;
+}
+
+.img-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.bg-light{background:#eef4f8;}
+.bg-azul{background:var(--azul);color:white;text-align:center;}
+
+/* FOOTER PRO */
+footer{
+  background:#082b47;
+  color:white;
+  padding:80px 60px 40px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  margin-bottom:40px;
+}
+
+.frase{
+  font-style:italic;
+  color:#2ECC71;
+  margin:15px 0;
+  font-size:15px;
+}
+
+footer i{
+  margin-right:8px;
+  color:#2ECC71;
+}
+
+.social{
+  display:flex;
+  gap:15px;
+  margin:15px 0;
+}
+
+.social a{
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  color:white;
+  transition:0.3s;
+}
+
+.social a:hover{
+  background:#2ECC71;
+  transform:translateY(-3px);
+}
+
+.social-text{
+  font-size:14px;
+  opacity:0.8;
+}
+
+.footer-bottom{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:20px;
+  font-size:14px;
+  opacity:0.7;
+}
+
+.video-section{
+  position:relative;
+  height:80vh;
+  margin:60px;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+/* VIDEO */
+.video-section video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* CAPA OSCURA */
+.overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.overlay h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.overlay p{
+  font-size:18px;
+  max-width:700px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="logo">
+<img src="img/logo.png">
+<div class="logo-text">
+<span class="main">RILM</span>
+<span class="sub">LIVING</span>
+</div>
+</div>
+
+<nav class="nav">
+<a href="index.html">Inicio</a>
+<a href="servicios.html">Servicios</a>
+<a href="nosotros.html">Nosotros</a>
+<a href="contacto.html">Contacto</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Sobre RILM Living</h1>
+</section>
+
+<section class="video-section">
+
+  <video autoplay muted loop playsinline>
+    <source src="video/RILM.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay">
+    <h2>Invierte con visión en la Ciudad de México</h2>
+    <p>Descubre el potencial del mercado inmobiliario con un enfoque estratégico.</p>
+  </div>
+
+</section>
+
+<!-- HISTORIA -->
+<section class="section">
+<div class="container split">
+
+<div>
+<h2>Nuestra visión del mercado inmobiliario</h2>
+
+<p>
+RILM Living nace con el objetivo de transformar la manera en que se toman decisiones dentro del sector inmobiliario.
+Desde sus inicios, la firma se ha enfocado en ofrecer un enfoque estratégico basado en análisis, conocimiento del mercado y ejecución profesional.
+</p>
+
+<p>
+A lo largo de los años, hemos construido una metodología propia que nos permite identificar oportunidades reales,
+reducir riesgos y generar valor sostenible para nuestros clientes.
+</p>
+
+<p>
+Nuestro compromiso es claro: convertir cada operación en una decisión inteligente.
+</p>
+
+</div>
+
+<div class="img-box">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
+</div>
+
+</div>
+</section>
+
+<!-- MISION VISION -->
+<section class="section bg-light">
+<div class="container grid">
+
+<div class="card">
+<h3>Misión</h3>
+<p>
+Brindar soluciones inmobiliarias estratégicas que permitan a nuestros clientes tomar decisiones informadas,
+generando crecimiento patrimonial sostenible.
+</p>
+</div>
+
+<div class="card">
+<h3>Visión</h3>
+<p>
+Ser una firma referente en consultoría inmobiliaria en México, reconocida por su enfoque analítico,
+transparencia y resultados.
+</p>
+</div>
+
+<div class="card">
+<h3>Valores</h3>
+<p>
+Transparencia, compromiso, profesionalismo y orientación a resultados en cada operación.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- EQUIPO -->
+<section class="section">
+<div class="container split">
+
+<div class="img-box">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+</div>
+
+<div>
+<h2>Un equipo enfocado en resultados</h2>
+
+<p>
+Nuestro equipo está conformado por profesionales con experiencia en bienes raíces,
+finanzas y análisis de mercado, lo que nos permite ofrecer un enfoque integral en cada proyecto.
+</p>
+
+<p>
+Trabajamos de manera colaborativa para garantizar que cada cliente reciba una asesoría personalizada,
+alineada a sus objetivos y necesidades.
+</p>
+
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-azul">
+<div class="container">
+
+<h2>Confía en experiencia, no en suposiciones</h2>
+<p>Agenda una asesoría con nuestro equipo</p>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>RILM Living</h4>
+
+<p class="frase">
+"Transformamos decisiones inmobiliarias en crecimiento patrimonial sostenible."
+</p>
+
+<p>
+Firma especializada en consultoría inmobiliaria en la Ciudad de México, enfocada en análisis estratégico, inversión y desarrollo patrimonial.
+</p>
+
+</div>
+
+<div>
+<h4>Contacto</h4>
+<p><i class="fas fa-phone"></i> +52 56 1187 5196</p>
+<p><i class="fas fa-envelope"></i> info@rilm.com.mx</p>
+<p><i class="fas fa-map-marker-alt"></i> Gutenberg #39 Piso 5 Col. Verónica Anzures; Alcaldía Miguel Hidalgo CDMX.</p>
+</div>
+
+<div>
+<h4>Redes sociales</h4>
+
+<div class="social">
+
+<a href="https://www.facebook.com/rilmliving" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="https://www.instagram.com/rilmliving" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://www.linkedin.com/company/rilm-living" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="https://wa.me/525611875196?text=Hola,%20quiero%20información" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+<p class="social-text">
+Síguenos para conocer oportunidades, tendencias del mercado y contenido inmobiliario relevante.
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 RILM Living. Todos los derechos reservados.</p>
+</div>
+
+</footer>
+
+</body>
+</html>
